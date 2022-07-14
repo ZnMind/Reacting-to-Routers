@@ -8,7 +8,9 @@ const Locations = () => {
     useEffect(() => {
         fetch('https://ghibliapi.herokuapp.com/locations')
             .then(locations => locations.json())
-            .then(data => setLocations(data))
+            .then(data => {
+                console.log(data)
+                setLocations(data)})
             .catch(e => alert(e));
     }, []);
 
@@ -17,17 +19,17 @@ const Locations = () => {
             <section className="row justify-content-center">
                 <div className="col-md-6">
                     <ul className="list-group">
-                        <h2 className='row mb-4 justify-content-center text-center'>Locations Page</h2>
+                        <h2 className='row mb-4 justify-content-center text-center'>Locations</h2>
                         <div className="row mb-4 justify-content-center">
                             <Link to="/" className='btn btn-outline-primary mr-4'>Home</Link>
                         </div>
                         {locations.map(locations => (
-                            <li key={`film-${locations.id}`} className="list-group-item d-flex justify-content-between">
+                            <div key={`film-${locations.id}`} className="list-group-item d-flex justify-content-between">
                                 <span>{locations.name}</span>
                                 <Link to={`/locations/${locations.id}`} className='btn btn-outline-primary'>
                                     Full Details
                                 </Link>
-                            </li>
+                            </div>
                         ))}
                     </ul>
                 </div>

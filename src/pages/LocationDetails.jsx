@@ -18,7 +18,7 @@ const LocationDetails = () => {
         <main className="container">
             <section className="d-flex row justify-content-center">
                 <div className="row col-md-12 mb-4 justify-content-center">
-                    <h2 className="text-center">Location Details Page</h2>
+                    <h2 className="text-center">Location Details</h2>
                 </div>
                 <div className="row col-md-12 mb-4 justify-content-center">
                     <Link to="/" className='btn btn-outline-primary mr-4'>Home</Link>

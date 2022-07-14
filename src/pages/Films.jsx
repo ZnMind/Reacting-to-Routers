@@ -23,10 +23,14 @@ const Films = () => {
                         </div>
                         {films.map(films => (
                             <li key={`film-${films.id}`} className="list-group-item d-flex justify-content-between">
+                                <img src={films.movie_banner} className="col-md-8" />
+                                <div className='text-center'>
+
                                 <span>{films.title}</span>
-                                <Link to={`/films/${films.id}`} className='btn btn-outline-primary'>
+                                <Link to={`/films/${films.id}`} className='btn btn-outline-primary mt-3 col-md-12'>
                                     Full Details
                                 </Link>
+                                </div>
                             </li>
                         ))}
                     </ul>
